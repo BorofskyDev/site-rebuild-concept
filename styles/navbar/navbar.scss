@@ -1,19 +1,22 @@
 @import '/style.scss';
 
+
+
 .navbar {
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 65px;
-  width: 100vw;
-  padding: 0 10vw;
+  max-width: 1000px;
+  padding: 0 4em;
   color: $clr-light;
   z-index: 1;
   transition: 0.4s ease-out;
 
   .logo {
     font-size: 1.3em;
+    padding-right: 2em;
   }
 
   a {
@@ -22,14 +25,15 @@
     font-size: 1rem;
     letter-spacing: 0.1875em;
     text-transform: uppercase;
-      & span {
-        color: $clr-accent;
-
-      }
+    & span {
+      color: $clr-accent;
+      
+    }
   }
-
+  
   .nav-links {
     display: flex;
+    
 
     .nav-link {
       transition: opacity 0.4s ease-in-out,
@@ -67,7 +71,7 @@
     display: none;
 
     &__line {
-      display: block;
+      display: flex;
       position: relative;
       background: $clr-light;
       height: 0.125em;

@@ -73,10 +73,17 @@ a {
 
 body {
   font-family: $ff-main;
-  font-size: $fs-400;
   background-color: $clr-dark;
-  color: $clr-light;
   overflow-x: hidden;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+html {
+  font-size: $fs-400;
+  color: $clr-light;
+
 }
 
 input,

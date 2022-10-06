@@ -2,7 +2,7 @@
 
 .hero {
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,42 +10,87 @@
 
   &__heading {
     display: flex;
-    
+
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     width: 45%;
     text-transform: uppercase;
-    
+
     &--banner {
-        font-family: $ff-titles;
-        display: inline-block;
-        color: $clr-primary;
-        letter-spacing: 0.1em;
-        font-size: $fs-800;
-        padding: 0 0.15em;
-        text-shadow: 0 0 0.115em $clr-secondary, 0 0 0.5em $clr-primary;
-        position: relative;
-        transition: background-color 100ms linear
-    
-       
+      font-family: $ff-titles;
+      cursor: default;
+      display: inline-block;
+      color: $clr-primary;
+      letter-spacing: 0.1em;
+      font-size: $fs-800;
+      padding: 0 0.15em;
+      text-shadow: 0 0 0.115em $clr-secondary, 0 0 0.5em $clr-primary;
+      position: relative;
+      transition: background-color 100ms linear;
+
+      &::before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        background: $clr-primary;
+        top: 60%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: perspective(0.5em) rotateX(40deg) scale(1, 0.35);
+        filter: blur(1rem);
+        opacity: 0.7;
+      }
+
+      &:hover,
+      &:focus {
+        color: $clr-accent;
+      }
+
+      &:hover::before,
+      &:focus::before {
+        opacity: 1;
+        background: rgb(255, 123, 0);
+        background: radial-gradient(
+          circle,
+          rgba(255, 123, 0, 1) 0%,
+          rgba(0, 132, 255, 1) 140%
+        );
+      }
     }
 
     &--tagline {
-        color: $clr-accent;
-        margin-top: 8em;
+      color: $clr-accent;
+      margin-top: 3em;
     }
   }
 
   &__image {
-    width: 45%;
+    position: relative;
+    margin-right: 4em;
+    border-radius: 50%;
+    box-shadow: -8px 22px 10px $clr-primary;
+    
+    &--curve {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      width: 90%;
+      height: 120%;
+      border-left: 2px solid $clr-accent;
+      border-radius: 50%;
+      transform: rotate(-45deg);
+      box-shadow: 0 8px 32px 0 $clr-accent;
+      z-index: -1;
+    }
 
     &--me {
-        border-radius: 50%;
-        max-height: 30em;
-        object-fit: cover;
-        border: 2px solid $clr-accent;
-        box-shadow: 2px 6px 30px $clr-primary;
+      border-right: 2px solid $clr-secondary;
+      border-radius: 50%;
+      max-height: 30em;
+      object-fit: cover;
+      z-index: 1;
     }
   }
 }
