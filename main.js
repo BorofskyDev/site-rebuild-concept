@@ -2,6 +2,7 @@ import './style.scss'
 import './styles/navbar/navbar.scss'
 import './styles/navbar/animation.scss'
 import './styles/navbar/media.scss'
+import './styles/hero/hero.scss'
 
 
 // STICKY NAVBAR

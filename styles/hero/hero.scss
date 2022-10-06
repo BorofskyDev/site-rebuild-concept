@@ -1,0 +1,51 @@
+@import 'style.scss';
+
+.hero {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+
+  &__heading {
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 45%;
+    text-transform: uppercase;
+    
+    &--banner {
+        font-family: $ff-titles;
+        display: inline-block;
+        color: $clr-primary;
+        letter-spacing: 0.1em;
+        font-size: $fs-800;
+        padding: 0 0.15em;
+        text-shadow: 0 0 0.115em $clr-secondary, 0 0 0.5em $clr-primary;
+        position: relative;
+        transition: background-color 100ms linear
+    
+       
+    }
+
+    &--tagline {
+        color: $clr-accent;
+        margin-top: 8em;
+    }
+  }
+
+  &__image {
+    width: 45%;
+
+    &--me {
+        border-radius: 50%;
+        max-height: 30em;
+        object-fit: cover;
+        border: 2px solid $clr-accent;
+        box-shadow: 2px 6px 30px $clr-primary;
+    }
+  }
+}
