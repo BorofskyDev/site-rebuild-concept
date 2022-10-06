@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300;400;700&display=swap');
+
+
+
+/*********************************************/
+/****************   ROOT SETUP   *************/
+/*********************************************/
+
+// COLORS
+
+//Warm and Cool Colors
+$clr-primary: #0084FF;
+$clr-secondary: #7DC0FF;
+$clr-accent: #FF7B00;
+
+// Base Colors
+$clr-light: #EDF6FF,;
+$clr-neutral: #41607D;
+$clr-dark: #000f1d;
+
+// FONT-SIZES
+$fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+$fs-800: 3.5rem;
+$fs-700: 1.5rem;
+$fs-600: 1rem;
+$fs-500: 1rem;
+$fs-400: 0.9375rem;
+$fs-300: 1rem;
+$fs-200: 0.875rem;
+
+@media (min-width: 40em) {
+  $fs-800: 5rem;
+  $fs-700: 2.5rem;
+  $fs-600: 1.5rem;
+  $fs-500: 1.25rem;
+  $fs-400: 1rem;
+}
+
+@media (min-width: 50rem) {
+  $fs-800: 6.25rem;
+  $fs-700: 3.5rem;
+  $fs-600: 2rem;
+  $fs-500: 1.75rem;
+  $fs-400: 1.125rem;
+}
+
+  // FONT-FAMILIES
+$ff-titles: 'Bree Serif', serif;
+$ff-main: 'Open Sans', sans-serif;
+
+/*********************************************/
+/****************    CSS RESET   *************/
+/*********************************************/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*********************************************/
+/****************   PAGE SETUP   *************/
+/*********************************************/
+
+body {
+  font-family: $ff-main;
+  font-size: $fs-400;
+  background-color: $clr-dark;
+  color: $clr-light;
+  overflow-x: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*********************************************/
+/**************** ACCESSEBILITY  *************/
+/*********************************************/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line */
+    border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: $clr-light;
+    color: $clr-dark;
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
