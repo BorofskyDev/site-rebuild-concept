@@ -1,21 +1,33 @@
 @import '/style.scss';
 
-@media (max-width: 53em) {
+@media (max-width: 45em) {
   .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+
+    .logo {
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+    }
+
     .menu-icon {
       display: block;
+      width: 90%;
 
       &__line {
         animation: closedMid 0.8s backwards;
         animation-direction: reverse;
 
         &::before {
-            animation: closedTop 0.8s backwards;
-            animation-direction: reverse;
+          animation: closedTop 0.8s backwards;
+          animation-direction: reverse;
         }
         &::after {
-            animation: closedBtm 0.8s backwards;
-            animation-direction: reverse;
+          animation: closedBtm 0.8s backwards;
+          animation-direction: reverse;
         }
       }
     }
@@ -32,7 +44,6 @@
       width: 100vw;
       height: 100vh;
       font-size: 2rem;
-      color: $clr-light;
       background: #000f1d6b;
       backdrop-filter: blur(0.5em);
       transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
@@ -47,6 +58,8 @@
         a {
           display: block;
           padding: 2rem 0;
+          color: $clr-accent;
+          text-shadow: 1px 1px 5px #000;
         }
       }
     }
@@ -77,8 +90,8 @@
     }
 
     .menu-btn:checked ~ .menu-icon {
-        border-radius: 50%;
-        animation: pulse 1s;
+      border-radius: 50%;
+      animation: pulse 1s;
 
       .menu-icon__line {
         background: $clr-accent;

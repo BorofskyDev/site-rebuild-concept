@@ -63,6 +63,7 @@
     &--tagline {
       color: $clr-accent;
       margin-top: 3em;
+      font-size: $fs-600;
     }
   }
 
@@ -91,6 +92,21 @@
       max-height: 30em;
       object-fit: cover;
       z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 53em) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      margin: 0;
+      margin-bottom: 5em;
+      width: 60%;
+      
     }
   }
 }
